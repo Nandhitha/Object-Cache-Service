@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?><!-- Use this file to deploy some handlers/chains and services      --><!-- Two ways to do this:                                           --><!--   java org.apache.axis.client.AdminClient deploy.wsdd          --><!--      after the axis server is running                          --><!-- or                                                             --><!--   java org.apache.axis.utils.Admin client|server deploy.wsdd   --><!--      from the same directory that the Axis engine runs         --><deployment xmlns="http://xml.apache.org/axis/wsdd/" xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+
+  <!-- Services from ObjectCacheService WSDL service -->
+
+  <service name="ObjectCache" provider="java:RPC" style="wrapped" use="literal">
+      <parameter name="wsdlTargetNamespace" value="http://ObjectCachePackage"/>
+      <parameter name="wsdlServiceElement" value="ObjectCacheService"/>
+      <parameter name="schemaQualified" value="http://ObjectCachePackage"/>
+      <parameter name="wsdlServicePort" value="ObjectCache"/>
+      <parameter name="className" value="ObjectCachePackage.ObjectCache"/>
+      <parameter name="wsdlPortType" value="ObjectCache"/>
+      <parameter name="typeMappingVersion" value="1.2"/>
+      <operation xmlns:operNS="http://ObjectCachePackage" xmlns:retNS="http://ObjectCachePackage" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="getCache" qname="operNS:getCache" returnQName="retNS:getCacheReturn" returnType="rtns:anyType" soapAction="">
+        <parameter xmlns:pns="http://ObjectCachePackage" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:k" type="tns:anyType"/>
+      </operation>
+      <operation xmlns:operNS="http://ObjectCachePackage" name="putCache" qname="operNS:putCache" soapAction="">
+        <parameter xmlns:pns="http://ObjectCachePackage" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:k" type="tns:anyType"/>
+        <parameter xmlns:pns="http://ObjectCachePackage" xmlns:tns="http://www.w3.org/2001/XMLSchema" qname="pns:v" type="tns:anyType"/>
+      </operation>
+      <operation xmlns:operNS="http://ObjectCachePackage" xmlns:retNS="http://ObjectCachePackage" xmlns:rtns="http://www.w3.org/2001/XMLSchema" name="LRUreplacement" qname="operNS:LRUreplacement" returnQName="retNS:LRUreplacementReturn" returnType="rtns:anyType" soapAction="">
+      </operation>
+      <parameter name="allowedMethods" value="LRUreplacement putCache getCache"/>
+
+      <typeMapping xmlns:ns="http://ObjectCachePackage" qname="ns:&gt;putCacheResponse" type="java:ObjectCachePackage.PutCacheResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://ObjectCachePackage" qname="ns:&gt;LRUreplacementResponse" type="java:ObjectCachePackage.LRUreplacementResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://ObjectCachePackage" qname="ns:&gt;getCacheResponse" type="java:ObjectCachePackage.GetCacheResponse" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://ObjectCachePackage" qname="ns:&gt;putCache" type="java:ObjectCachePackage.PutCache" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+      <typeMapping xmlns:ns="http://ObjectCachePackage" qname="ns:&gt;LRUreplacement" type="java:ObjectCachePackage.LRUreplacement" serializer="org.apache.axis.encoding.ser.BeanSerializerFactory" deserializer="org.apache.axis.encoding.ser.BeanDeserializerFactory" encodingStyle=""/>
+  </service>
+</deployment>

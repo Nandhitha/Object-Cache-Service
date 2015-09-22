@@ -1,0 +1,14 @@
+eclipse.preferences.version=1
+encoding//src/ObjectCachePackage/GetCacheResponse.java=UTF-8
+encoding//src/ObjectCachePackage/LRUreplacement.java=UTF-8
+encoding//src/ObjectCachePackage/LRUreplacementResponse.java=UTF-8
+encoding//src/ObjectCachePackage/ObjectCache.java=UTF-8
+encoding//src/ObjectCachePackage/ObjectCacheClass.java=UTF-8
+encoding//src/ObjectCachePackage/ObjectCacheClassService.java=UTF-8
+encoding//src/ObjectCachePackage/ObjectCacheClassServiceLocator.java=UTF-8
+encoding//src/ObjectCachePackage/ObjectCacheClassSoapBindingStub.java=UTF-8
+encoding//src/ObjectCachePackage/ObjectCacheService.java=UTF-8
+encoding//src/ObjectCachePackage/ObjectCacheServiceLocator.java=UTF-8
+encoding//src/ObjectCachePackage/ObjectCacheSoapBindingStub.java=UTF-8
+encoding//src/ObjectCachePackage/PutCache.java=UTF-8
+encoding//src/ObjectCachePackage/PutCacheResponse.java=UTF-8

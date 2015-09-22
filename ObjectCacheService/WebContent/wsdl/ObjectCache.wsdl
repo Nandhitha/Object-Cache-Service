@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://ObjectCachePackage" xmlns:apachesoap="http://xml.apache.org/xml-soap" xmlns:impl="http://ObjectCachePackage" xmlns:intf="http://ObjectCachePackage" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<!--WSDL created by Apache Axis version: 1.4
+Built on Apr 22, 2006 (06:55:48 PDT)-->
+ <wsdl:types>
+  <schema elementFormDefault="qualified" targetNamespace="http://ObjectCachePackage" xmlns="http://www.w3.org/2001/XMLSchema">
+   <element name="getCache">
+    <complexType>
+     <sequence>
+      <element name="k" type="xsd:anyType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="getCacheResponse">
+    <complexType>
+     <sequence>
+      <element name="getCacheReturn" type="xsd:anyType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="putCache">
+    <complexType>
+     <sequence>
+      <element name="k" type="xsd:anyType"/>
+      <element name="v" type="xsd:anyType"/>
+     </sequence>
+    </complexType>
+   </element>
+   <element name="putCacheResponse">
+    <complexType/>
+   </element>
+   <element name="LRUreplacement">
+    <complexType/>
+   </element>
+   <element name="LRUreplacementResponse">
+    <complexType>
+     <sequence>
+      <element name="LRUreplacementReturn" type="xsd:anyType"/>
+     </sequence>
+    </complexType>
+   </element>
+  </schema>
+ </wsdl:types>
+
+   <wsdl:message name="LRUreplacementRequest">
+
+      <wsdl:part element="impl:LRUreplacement" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCacheResponse">
+
+      <wsdl:part element="impl:getCacheResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="getCacheRequest">
+
+      <wsdl:part element="impl:getCache" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="putCacheRequest">
+
+      <wsdl:part element="impl:putCache" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="LRUreplacementResponse">
+
+      <wsdl:part element="impl:LRUreplacementResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:message name="putCacheResponse">
+
+      <wsdl:part element="impl:putCacheResponse" name="parameters">
+
+      </wsdl:part>
+
+   </wsdl:message>
+
+   <wsdl:portType name="ObjectCache">
+
+      <wsdl:operation name="getCache">
+
+         <wsdl:input message="impl:getCacheRequest" name="getCacheRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:getCacheResponse" name="getCacheResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="putCache">
+
+         <wsdl:input message="impl:putCacheRequest" name="putCacheRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:putCacheResponse" name="putCacheResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="LRUreplacement">
+
+         <wsdl:input message="impl:LRUreplacementRequest" name="LRUreplacementRequest">
+
+       </wsdl:input>
+
+         <wsdl:output message="impl:LRUreplacementResponse" name="LRUreplacementResponse">
+
+       </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:portType>
+
+   <wsdl:binding name="ObjectCacheSoapBinding" type="impl:ObjectCache">
+
+      <wsdlsoap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+
+      <wsdl:operation name="getCache">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="getCacheRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="getCacheResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="putCache">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="putCacheRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="putCacheResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+      <wsdl:operation name="LRUreplacement">
+
+         <wsdlsoap:operation soapAction=""/>
+
+         <wsdl:input name="LRUreplacementRequest">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:input>
+
+         <wsdl:output name="LRUreplacementResponse">
+
+            <wsdlsoap:body use="literal"/>
+
+         </wsdl:output>
+
+      </wsdl:operation>
+
+   </wsdl:binding>
+
+   <wsdl:service name="ObjectCacheService">
+
+      <wsdl:port binding="impl:ObjectCacheSoapBinding" name="ObjectCache">
+
+         <wsdlsoap:address location="http://localhost:8080/ObjectCacheService/services/ObjectCache"/>
+
+      </wsdl:port>
+
+   </wsdl:service>
+
+</wsdl:definitions>
